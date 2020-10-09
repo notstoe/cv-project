@@ -4,7 +4,7 @@ import "./GenInfo.css";
 function GenInfo(props) {
 	const { generalInfo, handleChangeGen, handleSubmitGen } = props;
 	return (
-		<form>
+		<form className="formGenInfo">
 			<label htmlFor="name">Name: </label>
 			<input
 				onChange={handleChangeGen}

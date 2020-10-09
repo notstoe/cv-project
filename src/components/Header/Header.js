@@ -1,7 +1,17 @@
 import React from "react";
+import github from "./assets/github.png";
+import "./Header.css";
 
 function Header() {
-	return <header>Header</header>;
+	return (
+		<header className="header">
+			<img id="github" src={github} alt="github"></img>
+			<p className="headerLink">Home</p>
+			<p className="headerLink">Content</p>
+			<p className="headerLink activeTab">Contact</p>
+			<p className="headerLink">Help</p>
+		</header>
+	);
 }
 
 export default Header;

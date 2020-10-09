@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 4px;
+	margin-bottom: 1vw;
+	font-family: "Peddana", serif;
+	font-size: 2vw;
+	background-color: #d9f7c7;
+}
+
+.headerLink {
+	cursor: pointer;
+	margin: 0 1.2vw;
+}
+
+.headerLink:hover {
+	border-bottom: 1px solid #b357e8;
+}
+
+.activeTab {
+	border-bottom: 1px solid #b357e8;
+}
+
+#github {
+	cursor: pointer;
+	width: 40px;
+	margin-right: 10vw;
+	background-color: #b357e8;
+	border-radius: 10px;
+	margin-left: 6vw;
+	padding: 5px;
+}
