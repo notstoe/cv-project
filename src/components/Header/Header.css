@@ -4,7 +4,6 @@
 	align-items: center;
 	padding: 4px;
 	margin-bottom: 1vw;
-	font-family: "Peddana", serif;
 	font-size: 2vw;
 	background-color: #d9f7c7;
 }
@@ -29,5 +28,5 @@
 	background-color: #b357e8;
 	border-radius: 10px;
 	margin-left: 6vw;
-	padding: 5px;
+	padding: 2px 6px;
 }

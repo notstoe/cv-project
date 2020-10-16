@@ -23,7 +23,7 @@ function App() {
 	return (
 		<div>
 			<Header />
-			<h1 className="pageTitle">Submit your CV and come work with us!</h1>
+			<h1 className="pageTitle">Submit your CV</h1>
 			<GeneralInfo
 				generalInfo={generalInfo}
 				handleChangeGen={handleChangeGen}
