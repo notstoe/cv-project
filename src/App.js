@@ -10,6 +10,7 @@ function App() {
 		phoneNum: "",
 		nationality: "",
 	});
+	const [hideInput, setHideInput] = useState(true);
 
 	function handleChangeGen(e) {
 		const { name, value } = e.target;
@@ -28,6 +29,8 @@ function App() {
 				generalInfo={generalInfo}
 				handleChangeGen={handleChangeGen}
 				handleSubmitGen={handleSubmitGen}
+				hideInput={hideInput}
+				setHideInput={setHideInput}
 			/>
 		</div>
 	);
