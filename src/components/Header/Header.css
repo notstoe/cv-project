@@ -9,11 +9,28 @@
 }
 
 .headerLink {
+	position: relative;
 	cursor: pointer;
 	margin: 0 1.2vw;
+	transition: all 5s;
 }
 
-.headerLink:hover {
+.headerLink:before {
+	content: "";
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1px;
+	width: 0;
+	border-bottom: 1px solid #b357e8;
+	transition: width 0.2s ease-in;
+}
+
+.headerLink:hover:before {
+	width: 100%;
 	border-bottom: 1px solid #b357e8;
 }
 
