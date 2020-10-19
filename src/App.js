@@ -19,6 +19,7 @@ function App() {
 
 	function handleSubmitGen(e) {
 		e.preventDefault();
+		setHideInput(!hideInput);
 	}
 
 	return (
