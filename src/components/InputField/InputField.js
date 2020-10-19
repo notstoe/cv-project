@@ -1,19 +1,41 @@
 import React from "react";
-import "./GenInfo.css";
+import "./InputField.css";
 
-function GenInfo(props) {
+function InputField(props) {
 	const {
 		generalInfo,
-		handleChangeGen,
-		handleSubmitGen,
+		handleChange,
+		handleSubmit,
 		hideInput,
 		setHideInput,
 	} = props;
 
+	const { title, inputFields } = props.inputInfo;
+
+	const inputElements = inputFields.map((inputField, index) => {
+		return (
+			<div key={index}>
+				<label className="genInfoLabel" htmlFor={inputField.name}>
+					{inputField.name.charAt(0).toUpperCase() +
+						inputField.name.slice(1) +
+						": "}
+				</label>
+				<input
+					className="genInfoInput"
+					onChange={handleChange}
+					value={generalInfo[inputField.name]}
+					type={inputField.type}
+					name={inputField.name}
+				></input>
+				<br />
+			</div>
+		);
+	});
+
 	if (hideInput) {
 		return (
 			<div className="genInfoHidden" onClick={() => setHideInput(!hideInput)}>
-				General Information
+				{title}
 				<svg
 					id="editIcon"
 					xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +68,7 @@ function GenInfo(props) {
 					}}
 					onClick={() => setHideInput(!hideInput)}
 				>
-					General Information
+					{title}
 					<svg
 						id="editIcon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -68,51 +90,8 @@ function GenInfo(props) {
 					</svg>
 				</div>
 				<form className="formGenInfo">
-					<label className="genInfoLabel" htmlFor="name">
-						Name:{" "}
-					</label>
-					<input
-						className="genInfoInput"
-						onChange={handleChangeGen}
-						value={generalInfo.name}
-						type="text"
-						name="name"
-					></input>
-					<br />
-					<label className="genInfoLabel" htmlFor="email">
-						Email:{" "}
-					</label>
-					<input
-						className="genInfoInput"
-						onChange={handleChangeGen}
-						value={generalInfo.email}
-						type="text"
-						name="email"
-					></input>
-					<br />
-					<label className="genInfoLabel" htmlFor="phoneNum">
-						Phone Number:{" "}
-					</label>
-					<input
-						className="genInfoInput"
-						onChange={handleChangeGen}
-						value={generalInfo.phoneNum}
-						type="text"
-						name="phoneNum"
-					></input>
-					<br />
-					<label className="genInfoLabel" htmlFor="nationality">
-						Nationality:{" "}
-					</label>
-					<input
-						className="genInfoInput"
-						onChange={handleChangeGen}
-						value={generalInfo.nationality}
-						type="text"
-						name="nationality"
-					></input>
-					<br />
-					<button className="genInfoSubmitBtn" onClick={handleSubmitGen}>
+					{inputElements}
+					<button className="genInfoSubmitBtn" onClick={handleSubmit}>
 						Submit
 					</button>
 				</form>
@@ -121,4 +100,4 @@ function GenInfo(props) {
 	}
 }
 
-export default GenInfo;
+export default InputField;
