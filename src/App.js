@@ -4,14 +4,11 @@ import "./App.css";
 import InputField from "./components/InputField/InputField";
 
 function App() {
-	const [generalInfo, setGeneralInfo] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		nationality: "",
-	});
-	const [hideInput, setHideInput] = useState(true);
+	// ..:: GENERAL INFO HANDLING
+	const [generalInfo, setGeneralInfo] = useState({});
+	const [hideGen, setHideGen] = useState(true);
 
+	// name of inputs in this object must match names on state object
 	const generalInput = {
 		title: "General Information",
 		inputFields: [
@@ -29,20 +26,61 @@ function App() {
 
 	function handleSubmitGen(e) {
 		e.preventDefault();
-		setHideInput(!hideInput);
+		setHideGen(!hideGen);
 	}
 
+	// ..:: EDUCATIONAL EXPERIENCE HANDLING
+
+	const [currentEduInfo, setCurrentEduInfo] = useState({});
+
+	const [allEduInfo, setAllEduInfo] = useState([]);
+
+	const [hideEdu, setHideEdu] = useState(true);
+
+	const eduInput = {
+		title: "Educational Experience",
+		inputFields: [
+			{ name: "institution", type: "text" },
+			{ name: "title of study", type: "text" },
+			{ name: "date (finished)", type: "text" },
+		],
+	};
+
+	function handleChangeEdu(e) {
+		const { name, value } = e.target;
+		setCurrentEduInfo({ ...currentEduInfo, [name]: value });
+	}
+
+	function handleSubmitEdu(e) {
+		e.preventDefault();
+		let newStateArr = allEduInfo.slice();
+		newStateArr.push(currentEduInfo);
+		setAllEduInfo(newStateArr);
+		setCurrentEduInfo({});
+		setHideEdu(!hideEdu);
+	}
+
+	// MAIN COMPONENTS OF PAGE
 	return (
 		<div>
 			<Header />
 			<h1 className="pageTitle">Submit your CV</h1>
 			<InputField
-				generalInfo={generalInfo}
+				infoState={generalInfo}
 				handleChange={handleChangeGen}
 				handleSubmit={handleSubmitGen}
-				hideInput={hideInput}
-				setHideInput={setHideInput}
+				hideInput={hideGen}
+				setHideInput={setHideGen}
 				inputInfo={generalInput}
+			/>
+
+			<InputField
+				infoState={currentEduInfo}
+				handleChange={handleChangeEdu}
+				handleSubmit={handleSubmitEdu}
+				hideInput={hideEdu}
+				setHideInput={setHideEdu}
+				inputInfo={eduInput}
 			/>
 		</div>
 	);

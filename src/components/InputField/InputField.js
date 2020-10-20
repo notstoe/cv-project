@@ -3,7 +3,7 @@ import "./InputField.css";
 
 function InputField(props) {
 	const {
-		generalInfo,
+		infoState,
 		handleChange,
 		handleSubmit,
 		hideInput,
@@ -23,7 +23,7 @@ function InputField(props) {
 				<input
 					className="genInfoInput"
 					onChange={handleChange}
-					value={generalInfo[inputField.name]}
+					value={infoState[inputField.name]}
 					type={inputField.type}
 					name={inputField.name}
 				></input>
