@@ -15,13 +15,13 @@ function InputField(props) {
 	const inputElements = inputFields.map((inputField, index) => {
 		return (
 			<div key={index}>
-				<label className="genInfoLabel" htmlFor={inputField.name}>
+				<label className="inputLabel" htmlFor={inputField.name}>
 					{inputField.name.charAt(0).toUpperCase() +
 						inputField.name.slice(1) +
 						": "}
 				</label>
 				<input
-					className="genInfoInput"
+					className="inputField"
 					onChange={handleChange}
 					value={infoState[inputField.name]}
 					type={inputField.type}
@@ -34,7 +34,10 @@ function InputField(props) {
 
 	if (hideInput) {
 		return (
-			<div className="genInfoHidden" onClick={() => setHideInput(!hideInput)}>
+			<div
+				className="inputFieldHidden"
+				onClick={() => setHideInput(!hideInput)}
+			>
 				{title}
 				<svg
 					id="editIcon"
@@ -61,7 +64,7 @@ function InputField(props) {
 		return (
 			<div>
 				<div
-					className="genInfoHidden"
+					className="inputFieldHidden"
 					style={{
 						boxShadow: "inset 0px 0px 3px 0px rgba(0,0,0,0.8)",
 						borderRadius: "4px",
@@ -89,9 +92,9 @@ function InputField(props) {
 						</g>
 					</svg>
 				</div>
-				<form className="formGenInfo">
+				<form className="inputForm">
 					{inputElements}
-					<button className="genInfoSubmitBtn" onClick={handleSubmit}>
+					<button className="submitBtn" onClick={handleSubmit}>
 						Submit
 					</button>
 				</form>

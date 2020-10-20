@@ -1,13 +1,13 @@
-.formGenInfo {
+.inputForm {
 	margin: 0 auto;
 	width: 45vw;
 }
 
-.genInfoLabel {
+.inputLabel {
 	font-size: 2vw;
 }
 
-.genInfoInput {
+.inputField {
 	width: 95%;
 	padding: 4px;
 	margin-bottom: 8px;
@@ -16,7 +16,7 @@
 	border: 1px solid #9b9b9b;
 }
 
-.genInfoHidden {
+.inputFieldHidden {
 	position: relative;
 	margin: 10px auto;
 	width: 48vw;
@@ -24,16 +24,16 @@
 	font-size: 2.3vw;
 }
 
-.genInfoHidden:hover {
+.inputFieldHidden:hover {
 	cursor: pointer;
 }
 
-.genInfoHidden:hover #editIcon {
+.inputFieldHidden:hover #editIcon {
 	opacity: 1;
 	transform: scale(1.08);
 }
 
-.genInfoHidden:before {
+.inputFieldHidden:before {
 	content: "";
 	position: absolute;
 	left: 25%;
@@ -45,11 +45,11 @@
 	transition: opacity 0.5s;
 }
 
-.genInfoHidden:hover:before {
+.inputFieldHidden:hover:before {
 	opacity: 0;
 }
 
-.genInfoHidden:after {
+.inputFieldHidden:after {
 	content: "";
 	position: absolute;
 	width: 0px;
@@ -63,7 +63,7 @@
 	transition: width 0.6s ease-in;
 }
 
-.genInfoHidden:hover:after {
+.inputFieldHidden:hover:after {
 	border-top: 1px solid #b357e8;
 	width: 60%;
 }
@@ -78,7 +78,7 @@
 	transition: all 0.6s;
 }
 
-.genInfoSubmitBtn {
+.submitBtn {
 	padding: 0.7vw 4vw;
 	text-align: center;
 	cursor: pointer;
@@ -90,11 +90,11 @@
 	overflow: hidden;
 }
 
-.genInfoSubmitBtn:hover {
+.submitBtn:hover {
 	color: black;
 }
 
-.genInfoSubmitBtn:before {
+.submitBtn:before {
 	content: "";
 	position: absolute;
 	transition: all 0.2s ease-in;
@@ -107,15 +107,15 @@
 	transform: translateX(-100%) rotate(45deg);
 }
 
-.genInfoSubmitBtn:hover:before {
+.submitBtn:hover:before {
 	transform: translateX(-26.5%) rotate(45deg);
 }
 
-.genInfoSubmitBtn:active:before {
+.submitBtn:active:before {
 	opacity: 0.9;
 }
 
-.genInfoSubmitBtn:after {
+.submitBtn:after {
 	content: "";
 	position: absolute;
 	transition: all 0.3s;
@@ -127,10 +127,10 @@
 	opacity: 0.4;
 	transform: translateY(-80%) translateX(100%) rotate(-45deg);
 }
-.genInfoSubmitBtn:hover:after {
+.submitBtn:hover:after {
 	transform: translateY(-80%) translateX(35%) rotate(-45deg);
 }
 
-.genInfoSubmitBtn:active:after {
+.submitBtn:active:after {
 	opacity: 0.8;
 }
