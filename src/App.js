@@ -12,22 +12,12 @@ function App() {
 	const generalInput = {
 		title: "General Information",
 		inputFields: [
-			{ name: "name", type: "text" },
-			{ name: "email", type: "text" },
-			{ name: "phone", type: "text" },
-			{ name: "nationality", type: "text" },
+			{ name: "name", type: "text", id: "gen" },
+			{ name: "email", type: "text", id: "gen" },
+			{ name: "phone", type: "text", id: "gen" },
+			{ name: "nationality", type: "text", id: "gen" },
 		],
 	};
-
-	function handleChangeGen(e) {
-		const { name, value } = e.target;
-		setGeneralInfo({ ...generalInfo, [name]: value });
-	}
-
-	function handleSubmitGen(e) {
-		e.preventDefault();
-		setHideGen(!hideGen);
-	}
 
 	// ..:: EDUCATIONAL EXPERIENCE HANDLING
 
@@ -40,35 +30,68 @@ function App() {
 	const eduInput = {
 		title: "Educational Experience",
 		inputFields: [
-			{ name: "institution", type: "text" },
-			{ name: "title of study", type: "text" },
-			{ name: "date (finished)", type: "text" },
+			{ name: "institution Name", type: "text", id: "edu" },
+			{ name: "title of Study", type: "text", id: "edu" },
+			{ name: "date (Finished)", type: "text", id: "edu" },
 		],
 	};
 
-	function handleChangeEdu(e) {
-		const { name, value } = e.target;
-		setCurrentEduInfo({ ...currentEduInfo, [name]: value });
+	// PROFESSIONAL EXPERIENCE
+
+	const [currentProInfo, setCurrentProInfo] = useState({});
+
+	const [allProInfo, setAllProInfo] = useState([]);
+
+	const [hidePro, setHidePro] = useState(true);
+
+	const proInput = {
+		title: "Professional Experience",
+		inputFields: [
+			{ name: "company Name", type: "text", id: "pro" },
+			{ name: "position Title", type: "text", id: "pro" },
+			{ name: "main Tasks", type: "text", id: "pro" },
+			{ name: "date (Start)", type: "text", id: "pro" },
+			{ name: "date (End)", type: "text", id: "pro" },
+		],
+	};
+
+	function handleChange(e) {
+		const { name, value, id } = e.target;
+		if (id === "gen") setGeneralInfo({ ...generalInfo, [name]: value });
+		if (id === "edu") setCurrentEduInfo({ ...currentEduInfo, [name]: value });
+		if (id === "pro") setCurrentProInfo({ ...currentProInfo, [name]: value });
 	}
 
-	function handleSubmitEdu(e) {
+	function handleSubmit(e) {
 		e.preventDefault();
-		let newStateArr = allEduInfo.slice();
-		newStateArr.push(currentEduInfo);
-		setAllEduInfo(newStateArr);
-		setCurrentEduInfo({});
-		setHideEdu(!hideEdu);
+		const { id } = e.target;
+
+		if (id === "gen") setHideGen(!hideGen);
+		if (id === "edu") {
+			let newEduStateArr = allEduInfo.slice();
+			newEduStateArr.push(currentEduInfo);
+			setAllEduInfo(newEduStateArr);
+			setCurrentEduInfo({});
+			setHideEdu(!hideEdu);
+		}
+		if (id === "pro") {
+			let newProStateArr = allProInfo.slice();
+			newProStateArr.push(currentProInfo);
+			setAllProInfo(newProStateArr);
+			setCurrentProInfo({});
+			setHidePro(!hidePro);
+		}
 	}
 
-	// MAIN COMPONENTS OF PAGE
+	// MAIN COMPONENTS OF THE PAGE
 	return (
 		<div>
 			<Header />
 			<h1 className="pageTitle">Submit your CV</h1>
 			<InputField
 				infoState={generalInfo}
-				handleChange={handleChangeGen}
-				handleSubmit={handleSubmitGen}
+				handleChange={handleChange}
+				handleSubmit={handleSubmit}
 				hideInput={hideGen}
 				setHideInput={setHideGen}
 				inputInfo={generalInput}
@@ -76,11 +99,20 @@ function App() {
 
 			<InputField
 				infoState={currentEduInfo}
-				handleChange={handleChangeEdu}
-				handleSubmit={handleSubmitEdu}
+				handleChange={handleChange}
+				handleSubmit={handleSubmit}
 				hideInput={hideEdu}
 				setHideInput={setHideEdu}
 				inputInfo={eduInput}
+			/>
+
+			<InputField
+				infoState={currentProInfo}
+				handleChange={handleChange}
+				handleSubmit={handleSubmit}
+				hideInput={hidePro}
+				setHideInput={setHidePro}
+				inputInfo={proInput}
 			/>
 		</div>
 	);
