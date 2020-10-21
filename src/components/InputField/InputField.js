@@ -21,9 +21,10 @@ function InputField(props) {
 						": "}
 				</label>
 				<input
+					id={inputField.id}
 					className="inputField"
 					onChange={handleChange}
-					value={infoState[inputField.name]}
+					value={infoState[inputField.name] || ""} //if inputfield.name is undefined, value == empty string (making the component controlled)
 					type={inputField.type}
 					name={inputField.name}
 				></input>
@@ -94,7 +95,11 @@ function InputField(props) {
 				</div>
 				<form className="inputForm">
 					{inputElements}
-					<button className="submitBtn" onClick={handleSubmit}>
+					<button
+						id={inputFields[0].id} //id from the first input field to link button to each section
+						className="submitBtn"
+						onClick={handleSubmit}
+					>
 						Submit
 					</button>
 				</form>
