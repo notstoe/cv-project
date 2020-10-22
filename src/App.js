@@ -8,7 +8,7 @@ function App() {
 	const [generalInfo, setGeneralInfo] = useState({});
 	const [hideGen, setHideGen] = useState(true);
 
-	// name of inputs in this object must match names on state object
+	// name of inputs in this object will be the keys on state object
 	const generalInput = {
 		title: "General Information",
 		inputFields: [
