@@ -34,6 +34,11 @@
 	border-bottom: 1px solid #b357e8;
 }
 
+#contact {
+	cursor: pointer;
+	margin: 0 1.2vw;
+}
+
 .activeTab {
 	border-bottom: 1px solid #b357e8;
 }

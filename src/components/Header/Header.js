@@ -8,7 +8,9 @@ function Header() {
 			<img id="github" src={github} alt="github"></img>
 			<p className="headerLink">Home</p>
 			<p className="headerLink">Content</p>
-			<p className="headerLink activeTab">Contact</p>
+			<p id="contact" className="activeTab">
+				Contact
+			</p>
 			<p className="headerLink">Help</p>
 		</header>
 	);
