@@ -10,10 +10,48 @@
 		0 20px 1px -9px rgba(0, 0, 0, 0.15);
 }
 
-#name {
-	font-size: 3vw;
+.placeHolderCv {
+	font-size: 2.3vw;
+	text-align: center;
 }
 
-.genInfo {
-	font-size: 1.9vw;
+#name {
+	font-size: 3vw;
+	margin-bottom: -0.4vw;
+}
+
+.sectionTitle {
+	position: relative;
+	font-size: 3vw;
+	padding-top: 10px;
+	margin-bottom: -13px;
+	margin-top: 13px;
+}
+
+.sectionTitle:before {
+	content: "";
+	position: absolute;
+	left: 25%;
+	right: 25%;
+	top: 0;
+	width: 47%;
+	margin: 0 auto;
+	border-top: 1px solid black;
+}
+
+.sectionInfo {
+	font-size: 1.8vw;
+	margin-top: 5px;
+	margin-left: 20px;
+	margin-bottom: 6px;
+}
+
+.expName {
+	font-size: 2.1vw;
+	font-weight: bold;
+	margin-top: 1.3vw;
+}
+
+.date {
+	font-size: 1.3vw;
 }
