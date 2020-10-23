@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import "./App.css";
 import InputField from "./components/InputField/InputField";
+import DisplayCv from "./components/DisplayCv/DisplayCv";
 
 function App() {
-	// ..:: GENERAL INFO HANDLING
+	// ..:: GENERAL INFO VARIABLES
 	const [generalInfo, setGeneralInfo] = useState({});
 	const [hideGen, setHideGen] = useState(true);
 
@@ -19,7 +20,7 @@ function App() {
 		],
 	};
 
-	// ..:: EDUCATIONAL EXPERIENCE HANDLING
+	// ..:: EDUCATIONAL EXPERIENCE VARIABLES
 
 	const [currentEduInfo, setCurrentEduInfo] = useState({});
 
@@ -32,11 +33,11 @@ function App() {
 		inputFields: [
 			{ name: "institution Name", type: "text", id: "edu" },
 			{ name: "title of Study", type: "text", id: "edu" },
-			{ name: "date (Finished)", type: "text", id: "edu" },
+			{ name: "date (Finished)", type: "date", id: "edu" },
 		],
 	};
 
-	// PROFESSIONAL EXPERIENCE
+	// PROFESSIONAL EXPERIENCE VARIABLES
 
 	const [currentProInfo, setCurrentProInfo] = useState({});
 
@@ -50,8 +51,8 @@ function App() {
 			{ name: "company Name", type: "text", id: "pro" },
 			{ name: "position Title", type: "text", id: "pro" },
 			{ name: "main Tasks", type: "text", id: "pro" },
-			{ name: "date (Start)", type: "text", id: "pro" },
-			{ name: "date (End)", type: "text", id: "pro" },
+			{ name: "date (Start)", type: "date", id: "pro" },
+			{ name: "date (End)", type: "date", id: "pro" },
 		],
 	};
 
@@ -113,6 +114,12 @@ function App() {
 				hideInput={hidePro}
 				setHideInput={setHidePro}
 				inputInfo={proInput}
+			/>
+
+			<DisplayCv
+				genInfo={generalInfo}
+				eduInfo={allEduInfo}
+				proInfo={allProInfo}
 			/>
 		</div>
 	);
