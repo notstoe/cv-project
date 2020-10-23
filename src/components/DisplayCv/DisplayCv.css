@@ -1,0 +1,19 @@
+.containerCv {
+	padding: 15px;
+	margin: 1.5vw auto;
+	width: 55vw;
+	border-radius: 5px;
+	background-color: rgb(248, 248, 248);
+	/* effect of stacked sheets of paper */
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+		0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
+		0 20px 1px -9px rgba(0, 0, 0, 0.15);
+}
+
+#name {
+	font-size: 3vw;
+}
+
+.genInfo {
+	font-size: 1.9vw;
+}
