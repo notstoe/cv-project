@@ -85,7 +85,15 @@ function App() {
 		}
 		if (id === "pro") {
 			let newProStateArr = allProInfo.slice();
-			newProStateArr.push(currentProInfo);
+
+			if (editSwitch.isEdit) {
+				// run this bit when the editSwitch.isEdit is true (editing, not adding)
+				newProStateArr[editSwitch.index] = currentProInfo;
+				setEditSwitch({ isEdit: !editSwitch.isEdit, index: "" });
+			} else {
+				newProStateArr.push(currentProInfo);
+			}
+
 			setAllProInfo(newProStateArr);
 			setCurrentProInfo({});
 			setHidePro(!hidePro);
@@ -99,18 +107,51 @@ function App() {
 		index: "",
 	});
 
-	function handleEdit(e) {
-		const identifier = e.target.parentNode.attributes[0].nodeValue;
+	function handleEditCV(e) {
+		let { id } = e.target.parentNode;
+		let identifier;
+		if (id === "surface1616470") {
+			identifier =
+				e.target.parentNode.parentNode.parentNode.attributes[0].nodeValue;
+			id = e.target.parentNode.parentNode.parentNode.id;
+		} else {
+			identifier = e.target.parentNode.attributes[0].nodeValue;
+		}
 
-		// switches the submit function for editing and not adding
-		setEditSwitch({ isEdit: !editSwitch.isEdit, index: identifier });
-
+		// switches the submit function for editing and not adding (if condition makes sure that if you click it twice, youre still editing)
+		if (!editSwitch.isEdit) {
+			setEditSwitch({ isEdit: !editSwitch.isEdit, index: identifier });
+		} else {
+			setEditSwitch({ ...editSwitch, index: identifier });
+		}
 		// scrolls to the top of the document
 		document.body.scrollTop = 0; // For Safari
 		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
-		setCurrentEduInfo(JSON.parse(JSON.stringify(allEduInfo[identifier])));
-		setHideEdu(!hideEdu);
+		if (id === "edu") {
+			setCurrentEduInfo(JSON.parse(JSON.stringify(allEduInfo[identifier])));
+			if (hideEdu) setHideEdu(!hideEdu);
+		} else if (id === "pro" || id === "surface1616470") {
+			setCurrentProInfo(JSON.parse(JSON.stringify(allProInfo[identifier])));
+			if (hidePro) setHidePro(!hidePro);
+		}
+	}
+
+	function handleRemoveCV(e) {
+		const identifier = e.target.parentNode.parentNode.attributes[0].nodeValue;
+		const { id } = e.target.parentNode.parentNode;
+
+		if (id === "edu") {
+			let newEduStateArr = allEduInfo.slice();
+			newEduStateArr.splice(identifier, 1);
+
+			setAllEduInfo(newEduStateArr);
+		} else if (id === "pro") {
+			let newProStateArr = allProInfo.slice();
+			newProStateArr.splice(identifier, 1);
+
+			setAllProInfo(newProStateArr);
+		}
 	}
 
 	// MAIN COMPONENTS OF THE PAGE
@@ -149,7 +190,8 @@ function App() {
 				genInfo={generalInfo}
 				eduInfo={allEduInfo}
 				proInfo={allProInfo}
-				handleEdit={handleEdit}
+				handleEditCV={handleEditCV}
+				handleRemoveCV={handleRemoveCV}
 			/>
 		</div>
 	);
