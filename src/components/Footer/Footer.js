@@ -3,14 +3,11 @@ import "./Footer.css";
 
 function Footer() {
 	return (
-		<header className="header">
-			<img id="github" src={github} alt="github"></img>
-			<p className="headerLink">Home</p>
-			<p className="headerLink">Content</p>
-			<p id="contact" className="activeTab">
-				Contact
+		<header className="footer">
+			<p className="footerContent">
+				This page was developed by Gustavo Tonin in ReactJS. Click on the GitHub
+				icon in the header for more info.
 			</p>
-			<p className="headerLink">Help</p>
 		</header>
 	);
 }

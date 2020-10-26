@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import "./App.css";
 import InputField from "./components/InputField/InputField";
 import DisplayCv from "./components/DisplayCv/DisplayCv";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	// ..:: GENERAL INFO VARIABLES
@@ -193,6 +194,7 @@ function App() {
 				handleEditCV={handleEditCV}
 				handleRemoveCV={handleRemoveCV}
 			/>
+			<Footer />
 		</div>
 	);
 }

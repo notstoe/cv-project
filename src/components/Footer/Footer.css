@@ -1,0 +1,14 @@
+.footer {
+	margin-bottom: 0px;
+	margin-top: 5vw;
+	padding: 4px;
+	height: 3vw;
+	background-color: #d9f7c7;
+}
+
+.footerContent {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.6vw;
+	width: 35vw;
+}
