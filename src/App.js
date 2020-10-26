@@ -37,7 +37,7 @@ function App() {
 		],
 	};
 
-	// PROFESSIONAL EXPERIENCE VARIABLES
+	// ..:: PROFESSIONAL EXPERIENCE VARIABLES
 
 	const [currentProInfo, setCurrentProInfo] = useState({});
 
@@ -70,7 +70,15 @@ function App() {
 		if (id === "gen") setHideGen(!hideGen);
 		if (id === "edu") {
 			let newEduStateArr = allEduInfo.slice();
-			newEduStateArr.push(currentEduInfo);
+
+			if (editSwitch.isEdit) {
+				// run this bit when the editSwitch.isEdit is true (editing, not adding)
+				newEduStateArr[editSwitch.index] = currentEduInfo;
+				setEditSwitch({ isEdit: !editSwitch.isEdit, index: "" });
+			} else {
+				newEduStateArr.push(currentEduInfo);
+			}
+
 			setAllEduInfo(newEduStateArr);
 			setCurrentEduInfo({});
 			setHideEdu(!hideEdu);
@@ -82,6 +90,27 @@ function App() {
 			setCurrentProInfo({});
 			setHidePro(!hidePro);
 		}
+	}
+
+	// ..:: EDIT CV HANDLING
+
+	const [editSwitch, setEditSwitch] = useState({
+		isEdit: false,
+		index: "",
+	});
+
+	function handleEdit(e) {
+		const identifier = e.target.parentNode.attributes[0].nodeValue;
+
+		// switches the submit function for editing and not adding
+		setEditSwitch({ isEdit: !editSwitch.isEdit, index: identifier });
+
+		// scrolls to the top of the document
+		document.body.scrollTop = 0; // For Safari
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+		setCurrentEduInfo(JSON.parse(JSON.stringify(allEduInfo[identifier])));
+		setHideEdu(!hideEdu);
 	}
 
 	// MAIN COMPONENTS OF THE PAGE
@@ -120,6 +149,7 @@ function App() {
 				genInfo={generalInfo}
 				eduInfo={allEduInfo}
 				proInfo={allProInfo}
+				handleEdit={handleEdit}
 			/>
 		</div>
 	);
