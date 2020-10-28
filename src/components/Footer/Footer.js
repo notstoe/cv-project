@@ -3,12 +3,12 @@ import "./Footer.css";
 
 function Footer() {
 	return (
-		<header className="footer">
+		<footer className="footer">
 			<p className="footerContent">
 				This page was developed by Gustavo Tonin in ReactJS. Click on the GitHub
 				icon in the header for more info.
 			</p>
-		</header>
+		</footer>
 	);
 }
 
