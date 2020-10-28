@@ -5,7 +5,10 @@ import "./Header.css";
 function Header() {
 	return (
 		<header className="header">
-			<img id="github" src={github} alt="github"></img>
+			<a href="https://github.com/notstoe/cv-project">
+				<img id="github" src={github} alt="github"></img>
+			</a>
+			<div id="whitespace"></div>
 			<p className="headerLink">Home</p>
 			<p className="headerLink">Content</p>
 			<p id="contact" className="activeTab">
