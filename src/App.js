@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
+import "./reset.css";
 import "./App.css";
 import InputField from "./components/InputField/InputField";
 import DisplayCv from "./components/DisplayCv/DisplayCv";
@@ -72,6 +73,17 @@ function App() {
 		if (id === "edu") {
 			let newEduStateArr = allEduInfo.slice();
 
+			if (currentEduInfo["institution Name"] === "") {
+				alert("Please add an Institution name");
+				return;
+			} else if (currentEduInfo["title of Study"]) {
+				alert("Please add an Title of Study");
+				return;
+			} else if (currentEduInfo["date (Finished)"]) {
+				alert("Please add the date you finished your studies");
+				return;
+			}
+
 			if (editSwitch.isEdit) {
 				// run this bit when the editSwitch.isEdit is true (editing, not adding)
 				newEduStateArr[editSwitch.index] = currentEduInfo;
@@ -119,7 +131,7 @@ function App() {
 			identifier = e.target.parentNode.attributes[0].nodeValue;
 		}
 
-		// switches the submit function for editing and not adding (if condition makes sure that if you click it twice, youre still editing)
+		// switches the submit function for editing and not adding ("if" condition makes sure that if you click it twice, youre still editing)
 		if (!editSwitch.isEdit) {
 			setEditSwitch({ isEdit: !editSwitch.isEdit, index: identifier });
 		} else {

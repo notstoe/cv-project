@@ -2,7 +2,8 @@
 
 body {
 	font-family: "Peddana", serif;
-	margin-bottom: 50px;
+	padding: 0;
+	margin: 0;
 }
 
 .pageTitle {
