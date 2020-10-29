@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Header from "./components/Header/Header";
 import "./reset.css";
+import Header from "./components/Header/Header";
 import "./App.css";
 import InputField from "./components/InputField/InputField";
 import DisplayCv from "./components/DisplayCv/DisplayCv";

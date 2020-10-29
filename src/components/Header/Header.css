@@ -45,23 +45,14 @@
 }
 
 #github {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	top: 0;
 	cursor: pointer;
 	width: 40px;
-	margin-left: 6vw;
 }
 a {
-	position: relative;
 	align-self: center;
 	margin-left: 6vw;
+	margin-right: 10.5vw;
 	padding-top: 2px;
 	height: 3vw;
 	width: 40px;
-}
-#whitespace {
-	width: 16.7vw;
 }
