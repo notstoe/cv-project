@@ -73,13 +73,13 @@ function App() {
 		if (id === "edu") {
 			let newEduStateArr = allEduInfo.slice();
 
-			if (currentEduInfo["institution Name"] === "") {
+			if (!currentEduInfo["institution Name"]) {
 				alert("Please add an Institution name");
 				return;
-			} else if (currentEduInfo["title of Study"]) {
+			} else if (!currentEduInfo["title of Study"]) {
 				alert("Please add an Title of Study");
 				return;
-			} else if (currentEduInfo["date (Finished)"]) {
+			} else if (!currentEduInfo["date (Finished)"]) {
 				alert("Please add the date you finished your studies");
 				return;
 			}
@@ -98,6 +98,20 @@ function App() {
 		}
 		if (id === "pro") {
 			let newProStateArr = allProInfo.slice();
+
+			if (!currentProInfo["company Name"]) {
+				alert("Please add a Company Name");
+				return;
+			} else if (!currentProInfo["position Title"]) {
+				alert("Please add a Position Title");
+				return;
+			} else if (
+				!currentProInfo["date (Start)"] ||
+				!currentProInfo["date (End)"]
+			) {
+				alert("Please add the dates of beginning and end of your employment");
+				return;
+			}
 
 			if (editSwitch.isEdit) {
 				// run this bit when the editSwitch.isEdit is true (editing, not adding)
