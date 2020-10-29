@@ -5,7 +5,7 @@ import "./Header.css";
 function Header() {
 	return (
 		<header className="header">
-			<a href="https://github.com/notstoe/cv-project">
+			<a href="https://github.com/notstoe">
 				<img id="github" src={github} alt="github"></img>
 			</a>
 			<p className="headerLink">Home</p>
