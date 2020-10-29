@@ -1,6 +1,7 @@
 import React from "react";
 import github from "./assets/github.png";
 import "./Header.css";
+import "./HeaderResponsive.css";
 
 function Header() {
 	return (

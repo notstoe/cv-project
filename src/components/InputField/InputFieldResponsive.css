@@ -1,0 +1,30 @@
+@media (max-width: 769px) {
+	.inputFieldHidden {
+		font-size: 3.5vw;
+	}
+
+	#editIcon {
+		width: 3vw;
+		height: 3vw;
+	}
+
+	.inputLabel {
+		font-size: 3vw;
+	}
+	.inputField {
+		font-size: 1.8vw;
+		height: 2.8vw;
+	}
+
+	.submitBtn {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		padding: 1.4vw 7.8vw;
+		font-size: 2.2vw;
+	}
+
+	.submitBtn:before {
+		width: 110%;
+	}
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./DisplayCv.css";
+import "./DisplayCvResponsive.css";
 
 function DisplayCv(props) {
 	const { eduInfo, proInfo } = props;

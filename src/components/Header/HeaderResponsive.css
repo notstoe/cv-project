@@ -1,0 +1,14 @@
+@media (max-width: 769px) {
+	.header {
+		font-size: 3.2vw;
+		height: 6.5vw;
+	}
+
+	#github {
+		width: 6.1vw;
+	}
+
+	a {
+		height: 6.1vw;
+	}
+}

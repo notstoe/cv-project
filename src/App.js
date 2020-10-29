@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./reset.css";
 import Header from "./components/Header/Header";
 import "./App.css";
+import "./AppResponsive.css";
 import InputField from "./components/InputField/InputField";
 import DisplayCv from "./components/DisplayCv/DisplayCv";
 import Footer from "./components/Footer/Footer";

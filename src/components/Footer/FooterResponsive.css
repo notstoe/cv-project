@@ -1,0 +1,7 @@
+@media (max-width: 769px) {
+	.footerContent {
+		font-size: 3vw;
+		width: 65vw;
+		padding: 10px;
+	}
+}
