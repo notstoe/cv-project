@@ -5,3 +5,12 @@
 		padding: 10px;
 	}
 }
+
+@media (max-width: 400px) {
+	.footerContent {
+		font-size: 22px;
+		width: 90vw;
+		line-height: 18px;
+		padding: 10px;
+	}
+}

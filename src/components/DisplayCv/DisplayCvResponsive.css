@@ -39,3 +39,49 @@
 		height: 2.95vw;
 	}
 }
+
+@media (max-width: 400px) {
+	.containerCv {
+		width: 84vw;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.placeHolderCv {
+		font-size: 28px;
+	}
+
+	#name {
+		font-size: 35px;
+	}
+
+	.sectionTitle {
+		font-size: 27px;
+	}
+
+	.sectionInfo {
+		font-size: 20px;
+	}
+
+	.expName {
+		font-size: 25px;
+		margin-top: 10px;
+	}
+	.date {
+		font-size: 15px;
+	}
+
+	#editIconCV {
+		opacity: 0.6;
+		width: 22px;
+		height: 22px;
+		right: 25px;
+	}
+
+	#removeIconCV {
+		opacity: 0.6;
+		width: 22px;
+		height: 22px;
+		right: -10px;
+	}
+}

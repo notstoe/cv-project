@@ -103,7 +103,7 @@ function DisplayCv(props) {
 	if (!name) {
 		return (
 			<div className="containerCv">
-				<h1 className="placeHolderCv">Your CV Info will be shown here</h1>
+				<h1 className="placeHolderCv">CV Info will be shown here</h1>
 			</div>
 		);
 	} else {

@@ -12,3 +12,20 @@
 		height: 6.1vw;
 	}
 }
+
+@media (max-width: 400px) {
+	.header {
+		font-size: 26px;
+		height: 45px;
+		margin-bottom: 15px;
+	}
+
+	#github {
+		width: 38px;
+	}
+
+	a {
+		height: 39px;
+		margin-right: 28px;
+	}
+}
