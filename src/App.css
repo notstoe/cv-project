@@ -11,3 +11,12 @@ body {
 	font-size: 3vw;
 	margin: 1vw 0;
 }
+
+#pageContainer {
+	position: relative;
+	min-height: 100vh;
+}
+
+#pageContent {
+	padding-bottom: 6vw;
+}

@@ -184,43 +184,45 @@ function App() {
 
 	// MAIN COMPONENTS OF THE PAGE
 	return (
-		<div>
-			<Header />
-			<h1 className="pageTitle">Submit your CV</h1>
-			<InputField
-				infoState={generalInfo}
-				handleChange={handleChange}
-				handleSubmit={handleSubmit}
-				hideInput={hideGen}
-				setHideInput={setHideGen}
-				inputInfo={generalInput}
-			/>
+		<div id="pageContainer">
+			<div id="pageContent">
+				<Header />
+				<h1 className="pageTitle">Submit your CV</h1>
+				<InputField
+					infoState={generalInfo}
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+					hideInput={hideGen}
+					setHideInput={setHideGen}
+					inputInfo={generalInput}
+				/>
 
-			<InputField
-				infoState={currentEduInfo}
-				handleChange={handleChange}
-				handleSubmit={handleSubmit}
-				hideInput={hideEdu}
-				setHideInput={setHideEdu}
-				inputInfo={eduInput}
-			/>
+				<InputField
+					infoState={currentEduInfo}
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+					hideInput={hideEdu}
+					setHideInput={setHideEdu}
+					inputInfo={eduInput}
+				/>
 
-			<InputField
-				infoState={currentProInfo}
-				handleChange={handleChange}
-				handleSubmit={handleSubmit}
-				hideInput={hidePro}
-				setHideInput={setHidePro}
-				inputInfo={proInput}
-			/>
+				<InputField
+					infoState={currentProInfo}
+					handleChange={handleChange}
+					handleSubmit={handleSubmit}
+					hideInput={hidePro}
+					setHideInput={setHidePro}
+					inputInfo={proInput}
+				/>
 
-			<DisplayCv
-				genInfo={generalInfo}
-				eduInfo={allEduInfo}
-				proInfo={allProInfo}
-				handleEditCV={handleEditCV}
-				handleRemoveCV={handleRemoveCV}
-			/>
+				<DisplayCv
+					genInfo={generalInfo}
+					eduInfo={allEduInfo}
+					proInfo={allProInfo}
+					handleEditCV={handleEditCV}
+					handleRemoveCV={handleRemoveCV}
+				/>
+			</div>
 			<Footer />
 		</div>
 	);
