@@ -10,7 +10,7 @@ The main objectives of this project are to:
 
 - Create a simple Webpage for a sample CV application
 - Practice React development, applying concepts as Reusable Components, State and Props.
-- Make use of the modern React syntax of Hooks, as in useState() and useEffect()
+- Make use of the modern React syntax of Hooks
 - Further improve JSX proficiency
 
 # more information
